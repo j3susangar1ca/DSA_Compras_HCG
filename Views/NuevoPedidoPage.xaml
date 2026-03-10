@@ -1,0 +1,33 @@
+<Page x:Class="DSA_Compras_HCG.Views.NuevoPedidoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel Spacing="15" MaxWidth="800" HorizontalAlignment="Left">
+        <TextBlock Text="Registro de Solicitud" Style="{StaticResource HeaderTextBlockStyle}" Margin="0,0,0,10"/>
+
+        <AutoSuggestBox x:Name="ArticuloSearch" 
+                        Header="Buscar Insumo (Catálogo 63k)" 
+                        PlaceholderText="Escriba el nombre del artículo..."
+                        QueryIcon="Find"
+                        TextChanged="ArticuloSearch_TextChanged"/>
+
+        <Expander Header="Validaciones de los 10 Pilares" IsExpanded="True" HorizontalAlignment="Stretch">
+            <StackPanel Spacing="10" Padding="15">
+                <CheckBox x:Name="chkNegativa" Content="Pilar 3: Negativa de Almacén Emitida" />
+                <CheckBox x:Name="chkAval" Content="Pilar 2: Aval de No Licitación (CGA)" />
+                <CheckBox x:Name="chkSuPre" Content="Pilar 6: Verificación de Su-pre Realizada" />
+
+                <InfoBar Title="Recordatorio Pilar 1" 
+                         Message="Si es Fondo Revolvente, el límite es $75,000 MXN." 
+                         IsOpen="True" Severity="Informational" IsClosable="False" />
+            </StackPanel>
+        </Expander>
+
+        <NumberBox x:Name="txtTotal" Header="Monto Total con IVA (Pilar 1)" Value="0" SmallChange="100"/>
+
+        <Button Content="Validar y Guardar Folio" 
+                Click="btnGuardar_Click" 
+                Style="{StaticResource AccentButtonStyle}" 
+                Width="200" Margin="0,20,0,0"/>
+    </StackPanel>
+</Page>

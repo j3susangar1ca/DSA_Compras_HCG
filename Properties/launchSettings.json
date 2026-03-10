@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DSA_Compras_HCG (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DSA_Compras_HCG (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
