@@ -1,7 +1,7 @@
 <Window
     x:Class="DSA_Compras_HCG.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <NavigationView x:Name="NavView" 
                         IsBackButtonVisible="Collapsed" 

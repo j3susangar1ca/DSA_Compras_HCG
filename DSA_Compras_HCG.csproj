@@ -49,9 +49,6 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Update="Views\DashboardPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>

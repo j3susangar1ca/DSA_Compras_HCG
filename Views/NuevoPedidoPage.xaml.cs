@@ -1,25 +1,43 @@
 ﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+// Asegúrate de que no haya un 'private' aquí arriba
 
-private void btnGuardar_Click(object sender, RoutedEventArgs e)
+namespace DSA_Compras_HCG.Views
 {
-    // PILAR 1: Hard-stop de $75,000
-    if (txtTotal.Value > 75000)
+    public sealed partial class NuevoPedidoPage : Page
     {
-        MostrarError("Pilar 1: Excede el límite de Fondo Revolvente.");
-        return;
+        public NuevoPedidoPage()
+        {
+            this.InitializeComponent();
+        }
+
+        // Los modificadores private son válidos AQUÍ ADENTRO
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            // PILAR 1: Hard-stop de $75,000
+            if (txtTotal.Value > 75000)
+            {
+                // Lógica de error
+                return;
+            }
+
+            // Validación del Autómata (DFA)
+            bool validacionCompleta = chkNegativa.IsChecked == true &&
+                                     chkAval.IsChecked == true &&
+                                     chkSuPre.IsChecked == true;
+
+            if (!validacionCompleta)
+            {
+                // Lógica de error
+                return;
+            }
+
+            // Lógica para guardar
+        }
+
+        private void ArticuloSearch_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            // Lógica de búsqueda
+        }
     }
-
-    // Validación del Autómata (DFA)
-    bool validacionCompeta = chkNegativa.IsChecked == true &&
-                             chkAval.IsChecked == true &&
-                             chkSuPre.IsChecked == true;
-
-    if (!validacionCompeta)
-    {
-        MostrarError("Faltan validaciones normativas obligatorias.");
-        return;
-    }
-
-    // Si todo es correcto, procedemos al INSERT en SQLite
-    GuardarEnBaseDeDatos();
 }
