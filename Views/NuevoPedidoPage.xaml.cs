@@ -7,19 +7,17 @@ namespace DSA_Compras_HCG.Views
     {
         public NuevoPedidoPage()
         {
-            // Si esto marca línea roja, no te preocupes, se quitará al recompilar
             this.InitializeComponent();
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            // Dejamos el botón funcional pero sin lógica compleja por ahora
-            // para evitar errores de controles no reconocidos.
+            // La lógica de los Pilares se activará cuando la base de datos esté lista
         }
 
         private void ArticuloSearch_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
-            // Buscador vacío por ahora
+            // Lógica de búsqueda sub-lineal
         }
     }
 }
